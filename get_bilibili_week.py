@@ -109,8 +109,8 @@ def get_weekdata_json(url, json_path):
 if __name__ == '__main__':
     # 官方 api
     url = 'https://api.bilibili.com/x/web-interface/popular/series/one?number={}'
-    # 爬虫数据存储路径
-    data_folder = './dat'
+    # 爬虫数据存储路径（相对项目根，VM 上从 Project 目录运行）
+    data_folder = './data'
     os.makedirs(data_folder, exist_ok=True)
 
     # 开始爬虫
