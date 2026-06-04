@@ -1,0 +1,40 @@
+# macOS 垃圾文件（打包 zip 前务必排除）
+.DS_Store
+__MACOSX/
+._*
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# 运行产物（按需保留，源数据 data/ 不忽略）
+spark-warehouse/
+metastore_db/
+derby.log
+*.log
+
+# 错误记录
+webURL_Error.csv
+
+# 从 PDF 抽取的文本（参考用，不进交付包）
+bili_pdf.txt
+
+# 本地搭 VM 用的辅助文件（仅自测，不进交付包）
+setup_ubuntu_env.sh
+VM搭建步骤.md
+preview_gen.py
+
+# 冗余压缩包（与 data/ 和源码重复，不入库）
+data.zip
+get_bilibili_week.zip
+
+# 老师的参考解法 PDF（他人材料，公开仓库不发布）
+Bilibili*栏目数据分析.pdf

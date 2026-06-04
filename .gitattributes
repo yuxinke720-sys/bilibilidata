@@ -1,0 +1,10 @@
+# 强制所有文本文件用 LF 换行，保证 Mac 开发、Ubuntu 评测一致
+* text=auto eol=lf
+
+# 二进制 / 数据文件不做换行转换
+*.json   -text
+*.zip    -text
+*.pdf    -text
+*.docx   -text
+*.png    -text
+*.jpg    -text
