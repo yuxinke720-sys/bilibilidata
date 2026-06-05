@@ -17,6 +17,7 @@ echarts_show.py —— 模块4：pyecharts 可视化（严格按项目 PDF）
 """
 import os
 import csv
+import base64
 
 from pyecharts import options as opts
 from pyecharts.charts import Bar, Pie, WordCloud, HeatMap, Page, Grid
@@ -33,6 +34,52 @@ ASSETS_DIR = os.path.join(HTML_DIR, "assets")
 CurrentConfig.ONLINE_HOST = "./assets/"
 CDN_HOST = "https://assets.pyecharts.org/assets/v5/"
 ASSET_FILES = ["echarts.min.js", "echarts-wordcloud.min.js"]
+
+# ---------------------------------------------------------------------------
+# B 站风格背景：淡粉底 + 平铺的“小电视”图标 + “第六组作业”水印
+# 小电视为自绘 SVG 几何图形（规避官方版权），水印很淡不挡图表
+# ---------------------------------------------------------------------------
+WATERMARK_GROUP = "第六组作业"
+BILI_PINK = "#FB7299"
+_WM_SVG = (
+    '<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">'
+    '<g transform="rotate(-22 150 100)" opacity="0.10">'
+    # 天线（细、圆头，向上外伸，贴近官方造型）
+    '<path d="M86 70 L66 40" stroke="#FB7299" stroke-width="5" stroke-linecap="round" fill="none"/>'
+    '<path d="M114 70 L134 40" stroke="#FB7299" stroke-width="5" stroke-linecap="round" fill="none"/>'
+    '<circle cx="66" cy="40" r="4" fill="#FB7299"/>'
+    '<circle cx="134" cy="40" r="4" fill="#FB7299"/>'
+    # 机身（大圆角的圆角矩形）
+    '<rect x="58" y="66" width="84" height="64" rx="22" fill="#FB7299"/>'
+    # 眼睛（白色竖向胶囊）
+    '<rect x="82" y="86" width="8" height="15" rx="4" fill="#ffffff"/>'
+    '<rect x="110" y="86" width="8" height="15" rx="4" fill="#ffffff"/>'
+    # 微笑
+    '<path d="M90 110 Q100 118 110 110" stroke="#ffffff" stroke-width="3" '
+    'stroke-linecap="round" fill="none"/>'
+    # 水印文字
+    '<text x="100" y="162" font-size="21" text-anchor="middle" fill="#FB7299" '
+    'font-family="PingFang SC,Microsoft YaHei,sans-serif">' + WATERMARK_GROUP + '</text>'
+    '</g></svg>'
+)
+_WM_B64 = base64.b64encode(_WM_SVG.encode("utf-8")).decode("ascii")
+BG_STYLE = (
+    "<style>"
+    "body{background-color:#fff5f9;"
+    "background-image:url('data:image/svg+xml;base64," + _WM_B64 + "');"
+    "background-repeat:repeat;background-attachment:fixed;}"
+    "</style>"
+)
+
+
+def inject_background(path):
+    """把 B 站风格背景 + 水印样式注入已渲染的 html。"""
+    with open(path, "r", encoding="utf-8") as f:
+        html = f.read()
+    if "</head>" in html and "fff5f9" not in html:
+        html = html.replace("</head>", BG_STYLE + "</head>", 1)
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(html)
 
 # 互动指标 → 中文显示名
 METRICS = [
@@ -88,6 +135,7 @@ def render(chart, name):
     os.makedirs(HTML_DIR, exist_ok=True)
     path = os.path.join(HTML_DIR, name + ".html")
     chart.render(path)
+    inject_background(path)
     print(f"  → 生成 {path}")
 
 
@@ -288,6 +336,7 @@ def make_index():
     items = "\n".join(
         f'      <li><a href="{fn}" target="_blank">{cn}</a></li>' for fn, cn in links
     )
+    wm_b64 = _WM_B64
     html = f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -295,7 +344,10 @@ def make_index():
   <title>Bilibili《每周必看》数据分析 可视化汇总</title>
   <style>
     body {{ font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
-            max-width: 760px; margin: 40px auto; padding: 0 20px; color: #222; }}
+            max-width: 760px; margin: 0 auto; padding: 40px 20px; color: #222;
+            background-color: #fff5f9;
+            background-image: url('data:image/svg+xml;base64,{wm_b64}');
+            background-repeat: repeat; background-attachment: fixed; }}
     h1 {{ color: #fb7299; border-bottom: 3px solid #fb7299; padding-bottom: 10px; }}
     ul {{ list-style: none; padding: 0; }}
     li {{ margin: 12px 0; }}
