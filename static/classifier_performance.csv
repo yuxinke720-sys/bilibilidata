@@ -1,5 +1,5 @@
 model,accuracy,auc
-LogisticRegression,0.5876,0.8334
-DecisionTree,0.7283,0.723
-RandomForest,0.8117,0.8829
-GBT,0.8061,0.8862
+LogisticRegression,0.5921,0.812
+DecisionTree,0.723,0.7173
+RandomForest,0.7998,0.8726
+GBT,0.8038,0.8742
