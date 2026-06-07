@@ -1,0 +1,22 @@
+# OneDay/Bilibili《每周必看》数据分析 —— 第三方依赖
+# Ubuntu 22.04 / Python 3.8.16 下：pip install -r requirements.txt
+
+# 数据采集（模块0）
+requests
+fake_useragent
+faker
+brotli
+retry
+
+# 数据清洗（模块1）
+pandas
+
+# Spark 分析（模块2/3）——版本须与集群一致
+pyspark==3.2.0
+numpy
+
+# 中文分词（模块2 词频）
+jieba
+
+# 可视化（模块4）
+pyecharts

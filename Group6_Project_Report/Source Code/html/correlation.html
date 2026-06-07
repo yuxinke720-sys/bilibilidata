@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+                <script type="text/javascript" src="./assets/echarts.min.js"></script>
+
+    
+<style>body{background-color:#fff5f9;background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIj48ZyB0cmFuc2Zvcm09InJvdGF0ZSgtMjIgMTUwIDEwMCkiIG9wYWNpdHk9IjAuMTAiPjxwYXRoIGQ9Ik04NiA3MCBMNjYgNDAiIHN0cm9rZT0iI0ZCNzI5OSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMTE0IDcwIEwxMzQgNDAiIHN0cm9rZT0iI0ZCNzI5OSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiLz48Y2lyY2xlIGN4PSI2NiIgY3k9IjQwIiByPSI0IiBmaWxsPSIjRkI3Mjk5Ii8+PGNpcmNsZSBjeD0iMTM0IiBjeT0iNDAiIHI9IjQiIGZpbGw9IiNGQjcyOTkiLz48cmVjdCB4PSI1OCIgeT0iNjYiIHdpZHRoPSI4NCIgaGVpZ2h0PSI2NCIgcng9IjIyIiBmaWxsPSIjRkI3Mjk5Ii8+PHJlY3QgeD0iODIiIHk9Ijg2IiB3aWR0aD0iOCIgaGVpZ2h0PSIxNSIgcng9IjQiIGZpbGw9IiNmZmZmZmYiLz48cmVjdCB4PSIxMTAiIHk9Ijg2IiB3aWR0aD0iOCIgaGVpZ2h0PSIxNSIgcng9IjQiIGZpbGw9IiNmZmZmZmYiLz48cGF0aCBkPSJNOTAgMTEwIFExMDAgMTE4IDExMCAxMTAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiLz48dGV4dCB4PSIxMDAiIHk9IjE2MiIgZm9udC1zaXplPSIyMSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI0ZCNzI5OSIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLE1pY3Jvc29mdCBZYUhlaSxzYW5zLXNlcmlmIj7nrKzlha3nu4TkvZzkuJo8L3RleHQ+PC9nPjwvc3ZnPg==');background-repeat:repeat;background-attachment:fixed;}</style></head>
+<body >
+    <div id="544c9cf6493d44e2a0575a5950db21e5" class="chart-container" style="width:900px; height:500px; "></div>
+    <script>
+        var chart_544c9cf6493d44e2a0575a5950db21e5 = echarts.init(
+            document.getElementById('544c9cf6493d44e2a0575a5950db21e5'), 'white', {renderer: 'canvas', locale: 'ZH'});
+        var option_544c9cf6493d44e2a0575a5950db21e5 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "heatmap",
+            "name": "\u76f8\u5173\u7cfb\u6570",
+            "coordinateSystem": "cartesian2d",
+            "data": [
+                [
+                    0,
+                    0,
+                    1.0
+                ],
+                [
+                    0,
+                    1,
+                    0.36
+                ],
+                [
+                    0,
+                    2,
+                    0.4
+                ],
+                [
+                    0,
+                    3,
+                    0.61
+                ],
+                [
+                    0,
+                    4,
+                    0.41
+                ],
+                [
+                    0,
+                    5,
+                    0.42
+                ],
+                [
+                    0,
+                    6,
+                    0.75
+                ],
+                [
+                    1,
+                    0,
+                    0.36
+                ],
+                [
+                    1,
+                    1,
+                    1.0
+                ],
+                [
+                    1,
+                    2,
+                    0.64
+                ],
+                [
+                    1,
+                    3,
+                    0.29
+                ],
+                [
+                    1,
+                    4,
+                    0.57
+                ],
+                [
+                    1,
+                    5,
+                    0.34
+                ],
+                [
+                    1,
+                    6,
+                    0.31
+                ],
+                [
+                    2,
+                    0,
+                    0.4
+                ],
+                [
+                    2,
+                    1,
+                    0.64
+                ],
+                [
+                    2,
+                    2,
+                    1.0
+                ],
+                [
+                    2,
+                    3,
+                    0.35
+                ],
+                [
+                    2,
+                    4,
+                    0.5
+                ],
+                [
+                    2,
+                    5,
+                    0.59
+                ],
+                [
+                    2,
+                    6,
+                    0.39
+                ],
+                [
+                    3,
+                    0,
+                    0.61
+                ],
+                [
+                    3,
+                    1,
+                    0.29
+                ],
+                [
+                    3,
+                    2,
+                    0.35
+                ],
+                [
+                    3,
+                    3,
+                    1.0
+                ],
+                [
+                    3,
+                    4,
+                    0.65
+                ],
+                [
+                    3,
+                    5,
+                    0.57
+                ],
+                [
+                    3,
+                    6,
+                    0.66
+                ],
+                [
+                    4,
+                    0,
+                    0.41
+                ],
+                [
+                    4,
+                    1,
+                    0.57
+                ],
+                [
+                    4,
+                    2,
+                    0.5
+                ],
+                [
+                    4,
+                    3,
+                    0.65
+                ],
+                [
+                    4,
+                    4,
+                    1.0
+                ],
+                [
+                    4,
+                    5,
+                    0.51
+                ],
+                [
+                    4,
+                    6,
+                    0.6
+                ],
+                [
+                    5,
+                    0,
+                    0.42
+                ],
+                [
+                    5,
+                    1,
+                    0.34
+                ],
+                [
+                    5,
+                    2,
+                    0.59
+                ],
+                [
+                    5,
+                    3,
+                    0.57
+                ],
+                [
+                    5,
+                    4,
+                    0.51
+                ],
+                [
+                    5,
+                    5,
+                    1.0
+                ],
+                [
+                    5,
+                    6,
+                    0.46
+                ],
+                [
+                    6,
+                    0,
+                    0.75
+                ],
+                [
+                    6,
+                    1,
+                    0.31
+                ],
+                [
+                    6,
+                    2,
+                    0.39
+                ],
+                [
+                    6,
+                    3,
+                    0.66
+                ],
+                [
+                    6,
+                    4,
+                    0.6
+                ],
+                [
+                    6,
+                    5,
+                    0.46
+                ],
+                [
+                    6,
+                    6,
+                    1.0
+                ]
+            ],
+            "label": {
+                "show": true,
+                "position": "inside",
+                "margin": 8,
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            },
+            "selectedMode": false,
+            "zlevel": 0,
+            "z": 2
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u76f8\u5173\u7cfb\u6570"
+            ],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "triggerEvent": false
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "displayTransition": true,
+        "textStyle": {
+            "fontSize": 14,
+            "richInheritPlainLabel": true
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "axisLabel": {
+                "show": true,
+                "rotate": 20,
+                "margin": 8,
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0,
+            "data": [
+                "\u64ad\u653e\u91cf",
+                "\u5f39\u5e55\u6570",
+                "\u8bc4\u8bba\u6570",
+                "\u6536\u85cf\u6570",
+                "\u6295\u5e01\u6570",
+                "\u5206\u4eab\u6570",
+                "\u70b9\u8d5e\u6570"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0,
+            "data": [
+                "\u64ad\u653e\u91cf",
+                "\u5f39\u5e55\u6570",
+                "\u8bc4\u8bba\u6570",
+                "\u6536\u85cf\u6570",
+                "\u6295\u5e01\u6570",
+                "\u5206\u4eab\u6570",
+                "\u70b9\u8d5e\u6570"
+            ]
+        }
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "\u5404\u4e92\u52a8\u6307\u6807\u65af\u76ae\u5c14\u66fc\u76f8\u5173\u6027\u70ed\u529b\u56fe",
+            "target": "blank",
+            "subtarget": "blank",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ],
+    "visualMap": {
+        "show": true,
+        "type": "continuous",
+        "min": -1,
+        "max": 1,
+        "inRange": {
+            "color": [
+                "#50a3ba",
+                "#eac763",
+                "#d94e5d"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "hoverLink": true,
+        "orient": "vertical",
+        "left": "left",
+        "padding": 5,
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    }
+};
+        chart_544c9cf6493d44e2a0575a5950db21e5.setOption(option_544c9cf6493d44e2a0575a5950db21e5);
+    </script>
+</body>
+</html>

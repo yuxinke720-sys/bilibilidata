@@ -37,9 +37,9 @@ data.zip
 get_bilibili_week.zip
 归档.zip
 
-# 交付打包产物（由已跟踪的源码/数据复制组装，可随时重建，避免重复入库）
-第六组_项目报告/
+# 交付打包 zip 不入库（文件夹 Group6_Project_Report 入库，供 Windows clone 后改回中文名）
 第六组_项目报告.zip
+Group6_Project_Report.zip
 
 # 老师的参考解法 PDF（他人材料，公开仓库不发布）
 Bilibili*栏目数据分析.pdf

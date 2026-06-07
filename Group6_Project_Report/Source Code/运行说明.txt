@@ -1,0 +1,42 @@
+运行说明（Windows 虚拟机）
+========================================
+
+一、环境准备
+1. 安装 Python 3.8（安装时勾选 “Add Python to PATH”）。
+2. 安装 Java JDK 8 或 11（pyspark 运行需要 Java，配置好 JAVA_HOME）。
+3. 在本文件夹（Source Code）打开命令行（cmd 或 PowerShell），安装依赖：
+       pip install -r requirements.txt
+
+二、数据位置
+   本文件夹下的 Data\ 已包含：
+     - week_1.json ~ week_375.json   共 374 个源数据（第 105 期为 B 站官方空缺期号）
+     - bilibili_week.txt             清洗后的数据
+   Windows 文件名大小写不敏感，脚本里的 ./data 会自动对应到 Data 文件夹。
+
+三、运行顺序（本地模式，无需单独安装 Hadoop/Spark，pyspark 自带 Spark）
+   请严格按下面顺序执行：
+
+   1) 数据清洗（从 Data 读 json，在本文件夹生成 bilibili_week.txt）
+        python data_process.py
+
+   2) Spark SQL 分析（结果写入 static\ 下的若干 csv）
+        python data_analysize1.py
+
+   3) Spark MLlib 分析（结果写入 static\ ，含相关性、分类器性能）
+        python data_analysize2.py
+
+   4) 可视化（读 static\ ，生成 html\ ，入口为 html\index.html）
+        python echarts_show.py
+      运行后用浏览器打开 html\index.html 查看全部图表。
+
+四、说明
+   - 上面为本地模式，直接读本文件夹的数据，不需要 HDFS，最稳妥。
+   - 必须先跑第 1 步 data_process.py 生成 bilibili_week.txt，
+     第 2、3 步才能读到它。
+   - 爬虫 bilibili_week.py 仅用于重新采集数据；Windows 下 B 站接口风控
+     容易报错，数据已采好放在 Data，无需重跑。
+   - 若要走 HDFS（Hadoop）模式：先启动 Hadoop，把 bilibili_week.txt 上传到
+     hdfs://localhost:9000/user/hadoop/ ，再给分析脚本加 --hdfs 参数，例如：
+        python data_analysize1.py --hdfs
+   - 本项目在 Ubuntu 22.04 + Hadoop 3.1.3 + Spark 3.2.0 环境下完整跑通；
+     Windows 上若 pyspark 因缺 winutils 报错，建议改用 Ubuntu 环境运行。
