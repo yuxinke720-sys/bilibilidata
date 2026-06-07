@@ -35,6 +35,11 @@ preview_gen.py
 # 冗余压缩包（与 data/ 和源码重复，不入库）
 data.zip
 get_bilibili_week.zip
+归档.zip
+
+# 交付打包产物（由已跟踪的源码/数据复制组装，可随时重建，避免重复入库）
+第六组_项目报告/
+第六组_项目报告.zip
 
 # 老师的参考解法 PDF（他人材料，公开仓库不发布）
 Bilibili*栏目数据分析.pdf
