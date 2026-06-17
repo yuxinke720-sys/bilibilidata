@@ -73,13 +73,8 @@ BG_STYLE = (
 
 
 def inject_background(path):
-    """把 B 站风格背景 + 水印样式注入已渲染的 html。"""
-    with open(path, "r", encoding="utf-8") as f:
-        html = f.read()
-    if "</head>" in html and "fff5f9" not in html:
-        html = html.replace("</head>", BG_STYLE + "</head>", 1)
-        with open(path, "w", encoding="utf-8") as f:
-            f.write(html)
+    """（已关闭背景）原本注入 B 站风格背景 + 水印，现保持图表页纯白底，不再注入。"""
+    return
 
 # 互动指标 → 中文显示名
 METRICS = [
@@ -344,10 +339,7 @@ def make_index():
   <title>Bilibili《每周必看》数据分析 可视化汇总</title>
   <style>
     body {{ font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
-            max-width: 760px; margin: 0 auto; padding: 40px 20px; color: #222;
-            background-color: #fff5f9;
-            background-image: url('data:image/svg+xml;base64,{wm_b64}');
-            background-repeat: repeat; background-attachment: fixed; }}
+            max-width: 760px; margin: 0 auto; padding: 40px 20px; color: #222; }}
     h1 {{ color: #fb7299; border-bottom: 3px solid #fb7299; padding-bottom: 10px; }}
     ul {{ list-style: none; padding: 0; }}
     li {{ margin: 12px 0; }}
