@@ -21,8 +21,8 @@ import pandas as pd
 # ---------------------------------------------------------------------------
 # 路径与 HDFS 配置（集中常量，换机器只改这里）
 # ---------------------------------------------------------------------------
-DATA_DIR = "./data"                       # 爬虫得到的 json 目录
-OUTPUT_TXT = "./bilibili_week.txt"        # 清洗后输出
+DATA_DIR = "./Data"                       # 源数据 json 目录（与 Data 文件夹同名，json 平放其中）
+OUTPUT_TXT = "./Data/bilibili_week.txt"   # 清洗后输出（写回 Data 文件夹）
 HDFS_TARGET_DIR = "/user/hadoop"          # HDFS 目标目录（Ubuntu VM 上按实际改）
 
 # 清洗后 txt 的列顺序（必须与 data_analysize1.py 的 schema 严格一致）

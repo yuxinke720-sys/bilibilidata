@@ -28,7 +28,7 @@ from retry import retry
 # ---------------------------------------------------------------------------
 # 常量
 # ---------------------------------------------------------------------------
-DATA_DIR = "./data"                       # 每期 json 存放目录
+DATA_DIR = "./Data"                       # 每期 json 存放目录（与 Data 文件夹同名）
 ERR_FILE = "webURL_Error.csv"             # 失败 number 记录
 ONE_API = "https://api.bilibili.com/x/web-interface/popular/series/one"   # 单期数据
 LIST_API = "https://api.bilibili.com/x/web-interface/popular/series/list"  # 全部期列表

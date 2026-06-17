@@ -35,7 +35,7 @@ HDFS_BASE = "hdfs://localhost:9000"                 # Ubuntu VM 上按实际改�
 HDFS_INPUT = HDFS_BASE + "/user/hadoop/bilibili_week.txt"
 # 本地调试用：用 as_uri() 正确编码路径（兼容含中文的目录，如 /home/thnu/桌面/Project）
 from pathlib import Path
-LOCAL_INPUT = Path("./bilibili_week.txt").resolve().as_uri()
+LOCAL_INPUT = Path("./Data/bilibili_week.txt").resolve().as_uri()
 
 STATIC_DIR = "./static"                             # 分析结果 csv 输出目录
 STOPWORDS_FILE = "./chineseStopWords.txt"           # 中文停用词（jieba 用）
